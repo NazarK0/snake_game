@@ -4,10 +4,8 @@ mod game;
 
 extern crate rand;
 extern crate piston_window;
-extern crate sdl2_window;
 
 use piston_window::*;
-use sdl2_window::Sdl2Window;
 use piston_window::types::Color;
 use game::Game;
 use draw::to_coord_u32;
@@ -17,7 +15,7 @@ const BLACK_COLOR: Color = [0.5, 0.5, 0.5, 1.0];
 fn main() {
     let (width, height) = (20, 20);
 
-    let mut window: PistonWindow<Sdl2Window> = WindowSettings::new(
+    let mut window: PistonWindow = WindowSettings::new(
         "Snake",
         [to_coord_u32(width), to_coord_u32(height)],
     )
